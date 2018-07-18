@@ -105,7 +105,9 @@ public class MesosSupervisor implements ISupervisor {
    */
   @Override
   public boolean confirmAssigned(int port) {
-    return _taskAssignments.confirmAssigned(port);
+    boolean isAssigned = _taskAssignments.confirmAssigned(port);
+    LOG.info("Confirming assignment for port {} as {}", port, isAssigned);
+    return isAssigned;
   }
 
   @Override
